@@ -32,7 +32,7 @@ export default function Header({ onOpenPopup }) {
 
   return (
     <header className={`topbar sticky${hidden ? ' hide' : ''}`}>
-      <a href="#" className="logo"><span className="d" />RADIX</a>
+      <a href="#" className="logo" aria-label="Radix Agency"><img src="/logo/radix-white.svg" alt="Radix" /></a>
       <nav className="nav">
         {navItems.map(([href, label]) => (
           <a key={href} href={href}>{label}</a>
@@ -59,7 +59,7 @@ export default function Header({ onOpenPopup }) {
       {mobileOpen && (
         <div className="mobile-nav-panel" onClick={() => setMobileOpen(false)}>
           <div className="top">
-            <a href="#" className="logo"><span className="d" />RADIX</a>
+            <a href="#" className="logo" aria-label="Radix Agency"><img src="/logo/radix-white.svg" alt="Radix" /></a>
             <button className="mobile-nav-btn" aria-label={t.popup.close} style={{ display: 'inline-flex' }}>
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 5l10 10M5 15L15 5" /></svg>
             </button>

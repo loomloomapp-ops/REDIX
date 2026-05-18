@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer data-screen-label="11 Footer">
       <div className="brand">
-        <div className="lg">RADIX<span className="d" /></div>
+        <div className="lg"><img src="/logo/radix-white.svg" alt="Radix" /></div>
         <p>{f.tagline}</p>
         <div className="geo"><b>UA</b> · <b>EU</b> · <b>USA</b> · <b>CANADA</b> · <b>UAE</b></div>
       </div>

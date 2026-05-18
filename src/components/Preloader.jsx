@@ -41,12 +41,7 @@ export default function Preloader({ onReady, minShow = 1100 }) {
       <div className="stage">
         <div className="pl-eyebrow"><span className="dt" />Radix · 2025</div>
         <div className="pl-logo">
-          <span className="l">R</span>
-          <span className="l">A</span>
-          <span className="l">D</span>
-          <span className="l">I</span>
-          <span className="l">X</span>
-          <span className="dot" />
+          <img src="/logo/radix-white.svg" alt="Radix" />
         </div>
         <div className="pl-bar" />
         <div className="pl-sub">System over chaos</div>
