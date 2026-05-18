@@ -433,3 +433,93 @@ footer .col a:hover{color:var(--accent)}
   .preloader .pl-logo span.l,.preloader .pl-logo .dot,.preloader .pl-sub{animation:none;transform:none;opacity:1}
   .preloader .pl-bar:after{animation:none;width:100%}
 }
+
+/* ===== Interactive hovers ===== */
+/* Buttons — lift + shadow on hover, press-down on click */
+.btn{transition:filter .2s,transform .15s ease,box-shadow .2s ease,background .25s ease,color .25s ease,border-color .25s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px -10px rgba(255,74,28,0.45)}
+.btn:active{transform:translateY(1px);box-shadow:none}
+.btn.light:hover{background:var(--ink);color:#fff;box-shadow:0 10px 22px -12px rgba(17,17,17,0.45)}
+.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* Logo wordmark — subtle */
+.logo{transition:opacity .2s}
+.logo:hover{opacity:.85}
+.logo:hover .d{transform:scale(1.25);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.logo .d{transition:transform .25s}
+
+/* Top-bar lang */
+.lang button{transition:color .2s}
+.lang button:hover{color:#fff}
+
+/* Mobile nav trigger */
+.mobile-nav-btn{transition:background .2s,color .2s,border-color .2s}
+.mobile-nav-btn:hover{background:#222;color:#fff;border-color:#444}
+
+/* Mobile panel links */
+.mobile-nav-panel a{transition:color .2s,padding-left .2s}
+.mobile-nav-panel a:hover{color:var(--accent);padding-left:8px}
+
+/* Hero video frame play affordance (already animates) */
+.video-frame{transition:transform .25s ease,box-shadow .25s ease}
+.video-frame:hover{box-shadow:0 0 0 4px rgba(255,255,255,0.10)}
+
+/* Case slider switch */
+.case-info .switch button{transition:background .2s,color .2s,border-color .2s,transform .15s}
+.case-info .switch button:active{transform:scale(0.94)}
+
+/* Niche rows — strengthen on touch devices too */
+.niche-row{cursor:default}
+.niche-row .name{transition:color .2s}
+.niche-row:hover .name{color:var(--accent)}
+
+/* Result cards */
+.result{transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.result:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(17,17,17,0.30)}
+.result.dark:hover{box-shadow:0 18px 36px -18px rgba(0,0,0,0.55)}
+.result.orange:hover{box-shadow:0 18px 36px -18px rgba(255,74,28,0.45)}
+
+/* Testimonial cards */
+.tcard{transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.tcard:hover{transform:translateY(-3px);box-shadow:0 18px 36px -22px rgba(17,17,17,0.25)}
+.tcard.dark:hover{box-shadow:0 18px 36px -18px rgba(0,0,0,0.55)}
+.tcard.orange:hover{box-shadow:0 18px 36px -18px rgba(255,74,28,0.45)}
+
+/* FAQ items — pre-open hover */
+.faq-item{transition:padding-left .2s}
+.faq-item h5{transition:color .2s}
+.faq-item:hover:not(.open){padding-left:8px}
+.faq-item:hover:not(.open) h5{color:var(--ink-2)}
+.faq-item:hover:not(.open) .plus{border-color:var(--ink);background:var(--ink)}
+.faq-item:hover:not(.open) .plus:before,
+.faq-item:hover:not(.open) .plus:after{background:#fff}
+
+/* Audit form fields — focus-like hover */
+.audit-form input,.audit-form select,.audit-form textarea{transition:border-bottom-color .2s}
+.audit-form input:hover,.audit-form select:hover,.audit-form textarea:hover{border-bottom-color:rgba(255,255,255,0.35);cursor:text}
+.audit-form select{cursor:pointer}
+.audit-form .check{cursor:pointer;transition:color .2s}
+.audit-form .check:hover{color:#fff}
+
+/* Popup close */
+.popup-card .close{transition:background .2s,color .2s,transform .2s}
+.popup-card .close:hover{transform:rotate(90deg)}
+
+/* Footer + final CTA links */
+footer .col a,.final .links{transition:color .2s}
+.final .ctas a:hover{background:#fff}
+.final .ctas .btn[style*="background:#111"]:hover,
+.final .ctas button.btn:hover{filter:brightness(1.2)}
+
+/* Anchors in nav already styled; ensure focus-visible halo for keyboard users */
+*:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.btn:focus-visible{outline-offset:4px}
+.case-info .switch button:focus-visible,.popup-card .close:focus-visible,.mobile-nav-btn:focus-visible{outline-offset:2px}
+
+@media (hover:none){
+  /* On touch devices, suppress lift hovers to avoid stuck states after tap */
+  .btn:hover,.result:hover,.tcard:hover{transform:none;box-shadow:none}
+  .video-frame:hover .play{transform:none}
+  .niche-row:hover{padding-left:4px;background:none}
+  .niche-row:hover .name{color:var(--ink)}
+}
