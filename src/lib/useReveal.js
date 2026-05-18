@@ -9,7 +9,13 @@ import { useEffect } from 'react'
  * `.in` synchronously on the next frame so above-the-fold content (Hero)
  * never gets stuck in its initial hidden state.
  */
-const SELECTORS = ['.reveal', '.reveal-l', '.reveal-r', '.reveal-up', '.reveal-fade', '.reveal-stagger']
+/**
+ * Only section-level wrappers are observed. Inner reveal-l / reveal-r /
+ * reveal-up / reveal-stagger pieces are then triggered by cascade (`.in .reveal-l`
+ * in CSS) so a single intersection event unfolds the whole block in one go —
+ * no async dropouts that leave individual headings stuck hidden.
+ */
+const SELECTORS = ['.reveal', '.reveal-fade']
 
 export function useReveal(enabled = true) {
   useEffect(() => {

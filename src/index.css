@@ -393,34 +393,36 @@ footer .col a:hover{color:var(--accent)}
 /* default — soft top+bottom + lift */
 .reveal{clip-path:inset(8% 0 8% 0);-webkit-clip-path:inset(8% 0 8% 0);transform:translateY(28px)}
 .reveal.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateY(0)}
-/* left → right wipe */
-.reveal-l{clip-path:inset(0 100% 0 0);-webkit-clip-path:inset(0 100% 0 0);transform:translateX(-12px)}
-.reveal-l.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
-/* right → left wipe */
-.reveal-r{clip-path:inset(0 0 0 100%);-webkit-clip-path:inset(0 0 0 100%);transform:translateX(12px)}
-.reveal-r.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
-/* bottom → top reveal (mask-style growth) */
-.reveal-up{clip-path:inset(100% 0 0 0);-webkit-clip-path:inset(100% 0 0 0);transform:translateY(24px)}
-.reveal-up.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateY(0)}
-/* simple fade + tiny lift */
+/* simple fade + tiny lift (used on section wrappers) */
 .reveal-fade{transform:translateY(14px)}
 .reveal-fade.in{opacity:1;transform:translateY(0)}
 
-/* Stagger children of a .reveal-stagger container */
+/* Child variants — triggered by cascade when an ancestor .reveal* gets `.in`.
+   Single observer per section keeps headings + grids in sync. */
+.reveal-l{clip-path:inset(0 100% 0 0);-webkit-clip-path:inset(0 100% 0 0);transform:translateX(-12px);transition-delay:.15s}
+.in .reveal-l,.reveal-l.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
+.reveal-r{clip-path:inset(0 0 0 100%);-webkit-clip-path:inset(0 0 0 100%);transform:translateX(12px);transition-delay:.15s}
+.in .reveal-r,.reveal-r.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateX(0)}
+.reveal-up{clip-path:inset(100% 0 0 0);-webkit-clip-path:inset(100% 0 0 0);transform:translateY(24px);transition-delay:.15s}
+.in .reveal-up,.reveal-up.in{clip-path:inset(0 0 0 0);-webkit-clip-path:inset(0 0 0 0);opacity:1;transform:translateY(0)}
+
+/* Stagger children of a .reveal-stagger container.
+   Activates when the container OR an ancestor section gets .in. */
 .reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1)}
-.reveal-stagger.in > *{opacity:1;transform:translateY(0)}
-.reveal-stagger.in > *:nth-child(1){transition-delay:0ms}
-.reveal-stagger.in > *:nth-child(2){transition-delay:60ms}
-.reveal-stagger.in > *:nth-child(3){transition-delay:120ms}
-.reveal-stagger.in > *:nth-child(4){transition-delay:180ms}
-.reveal-stagger.in > *:nth-child(5){transition-delay:240ms}
-.reveal-stagger.in > *:nth-child(6){transition-delay:300ms}
-.reveal-stagger.in > *:nth-child(7){transition-delay:360ms}
-.reveal-stagger.in > *:nth-child(8){transition-delay:420ms}
-.reveal-stagger.in > *:nth-child(9){transition-delay:480ms}
-.reveal-stagger.in > *:nth-child(10){transition-delay:540ms}
-.reveal-stagger.in > *:nth-child(11){transition-delay:600ms}
-.reveal-stagger.in > *:nth-child(12){transition-delay:660ms}
+.reveal-stagger.in > *,
+.in .reveal-stagger > *{opacity:1;transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1),.in .reveal-stagger > *:nth-child(1){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(2),.in .reveal-stagger > *:nth-child(2){transition-delay:.21s}
+.reveal-stagger.in > *:nth-child(3),.in .reveal-stagger > *:nth-child(3){transition-delay:.27s}
+.reveal-stagger.in > *:nth-child(4),.in .reveal-stagger > *:nth-child(4){transition-delay:.33s}
+.reveal-stagger.in > *:nth-child(5),.in .reveal-stagger > *:nth-child(5){transition-delay:.39s}
+.reveal-stagger.in > *:nth-child(6),.in .reveal-stagger > *:nth-child(6){transition-delay:.45s}
+.reveal-stagger.in > *:nth-child(7),.in .reveal-stagger > *:nth-child(7){transition-delay:.51s}
+.reveal-stagger.in > *:nth-child(8),.in .reveal-stagger > *:nth-child(8){transition-delay:.57s}
+.reveal-stagger.in > *:nth-child(9),.in .reveal-stagger > *:nth-child(9){transition-delay:.63s}
+.reveal-stagger.in > *:nth-child(10),.in .reveal-stagger > *:nth-child(10){transition-delay:.69s}
+.reveal-stagger.in > *:nth-child(11),.in .reveal-stagger > *:nth-child(11){transition-delay:.75s}
+.reveal-stagger.in > *:nth-child(12),.in .reveal-stagger > *:nth-child(12){transition-delay:.81s}
 
 @media (prefers-reduced-motion: reduce){
   .reveal,.reveal-l,.reveal-r,.reveal-up,.reveal-fade,.reveal-stagger > *{
