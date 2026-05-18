@@ -56,7 +56,7 @@ export default function LeadForm({ source = 'inline' }) {
     return (
       <div className="audit-form">
         <div className="ok">● {t.form.ok}</div>
-        <div style={{ color: '#fff', fontFamily: 'Bricolage Grotesque', fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+        <div style={{ color: '#fff', fontFamily: 'Unbounded', fontSize: 22, letterSpacing: '-0.02em', lineHeight: 1.2 }}>
           {t.form.okSub}
         </div>
         <button
