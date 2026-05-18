@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radix-green: #116040;
+  --radix-green-glow: #1a8a5c;
+  --radix-ivory: #EAEADE;
+  --radix-graphite: #222222;
+  --radix-ink: #222222;
+  --radix-sage: #CDCDBF;
+  --radix-orange: #FF6B43;
+
+  --background: #EAEADE;
+  --foreground: #222222;
+  --muted: #CDCDBF;
+  --primary: #116040;
+  --accent: #FF6B43;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Focus ring — keep the element's natural shape (no forced radius). */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+/* Form fields look better with a small radius on the outline */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-radius: 14px;
+}
+
+.field {
+  width: 100%;
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid rgba(34, 34, 34, 0.18);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.field:hover { border-color: rgba(34, 34, 34, 0.32); }
+.field:focus { border-color: var(--primary); outline: none; }
+select.field {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23222' stroke-width='1.5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.field-dark {
+  width: 100%;
+  background: rgba(234, 234, 222, 0.04);
+  color: var(--background);
+  border: 1px solid rgba(234, 234, 222, 0.16);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.4;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+.field-dark:hover { border-color: rgba(234, 234, 222, 0.32); }
+.field-dark:focus { border-color: var(--radix-green-glow); outline: none; background: rgba(234, 234, 222, 0.06); }
+select.field-dark {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='%23EAEADE' stroke-width='1.5'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+select.field-dark option { background: var(--radix-ink); color: var(--background); }
+
+/* Liquid glass card — high-end inset border via mask-composite */
+.liquid-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.10),
+    0 30px 80px -40px rgba(0, 0, 0, 0.6);
+  border-radius: 22px;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.4px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.05) 45%, rgba(26,138,92,0.35));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Hero grid lines removed — replaced by cursor-reactive marquee bands */
+
+/* Marquee — bold display variant */
+.marquee-display {
+  font-family: 'Unbounded', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Slow ambient pulse for green glow */
+@keyframes radix-pulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+.green-pulse { animation: radix-pulse 7s ease-in-out infinite; }
