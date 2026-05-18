@@ -4,14 +4,14 @@ export default function Hero({ onOpenPopup }) {
   const { t } = useI18n()
   const h = t.hero
   return (
-    <section className="hero" data-screen-label="02 Hero">
+    <section className="hero reveal-fade" data-screen-label="02 Hero">
       <div className="hero-grid">
         <div className="card dark hero-left">
           <div className="head">
             <span className="badge"><span className="pulse" />{h.badge}</span>
             <span className="mono" style={{ color: '#9D9485' }}>{h.tag}</span>
           </div>
-          <h1>
+          <h1 className="reveal-l">
             {h.h1a}<span className="serif-it">{h.h1b}</span><br />
             {h.h1c}<br />
             {h.h1d}<span className="dot" />

@@ -8,8 +8,9 @@ export function useReveal() {
   useEffect(() => {
     if (typeof window === 'undefined') return
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const selector = '.reveal, .reveal-l, .reveal-r, .reveal-up, .reveal-fade, .reveal-stagger'
     if (reduce) {
-      document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'))
+      document.querySelectorAll(selector).forEach((el) => el.classList.add('in'))
       return
     }
     const io = new IntersectionObserver(
@@ -23,7 +24,7 @@ export function useReveal() {
       },
       { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
     )
-    const scan = () => document.querySelectorAll('.reveal:not(.in)').forEach((el) => io.observe(el))
+    const scan = () => document.querySelectorAll(selector.split(', ').map((s) => `${s}:not(.in)`).join(', ')).forEach((el) => io.observe(el))
     scan()
     // Re-scan when DOM mutates (e.g. case slider re-mount, lang switch)
     const mo = new MutationObserver(() => scan())

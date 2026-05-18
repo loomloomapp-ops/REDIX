@@ -6,14 +6,14 @@ export default function FAQ() {
   const [open, setOpen] = useState(0)
   const f = t.faq
   return (
-    <section className="section reveal" id="faq" data-screen-label="09 FAQ">
+    <section className="section reveal-fade" id="faq" data-screen-label="09 FAQ">
       <div className="faq">
         <div>
           <div className="eyebrow"><span className="bullet" />{f.eyebrow}</div>
-          <h3>{f.h3a}<span className="serif-it">{f.h3b}</span><span className="dot" /></h3>
+          <h3 className="reveal-l">{f.h3a}<span className="serif-it">{f.h3b}</span><span className="dot" /></h3>
           <p className="desc">{f.desc}</p>
         </div>
-        <div className="faq-list">
+        <div className="faq-list reveal-stagger">
           {f.items.map((it, i) => (
             <button
               key={i}

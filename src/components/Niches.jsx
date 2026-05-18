@@ -4,11 +4,11 @@ export default function Niches() {
   const { t } = useI18n()
   const n = t.niches
   return (
-    <section className="section reveal" id="niches" data-screen-label="03 Niches">
+    <section className="section reveal-fade" id="niches" data-screen-label="03 Niches">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{n.eyebrow}</div>
-          <h2>
+          <h2 className="reveal-l">
             {n.h2a}<br />{n.h2b}<span className="serif-it">{n.h2c}</span><span className="dot" />
           </h2>
         </div>
@@ -25,7 +25,7 @@ export default function Niches() {
           </div>
           <span className="pill"><span className="b" />{n.pill}</span>
         </div>
-        <div className="niches-right">
+        <div className="niches-right reveal-stagger">
           {n.rows.map(([num, name, meta]) => (
             <div className="niche-row" key={num}>
               <span className="n">— {num}</span>

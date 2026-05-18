@@ -4,16 +4,16 @@ export default function AISection() {
   const { t } = useI18n()
   const a = t.ai
   return (
-    <section className="section reveal" data-screen-label="07 AI">
+    <section className="section reveal-fade" data-screen-label="07 AI">
       <div className="ai">
         <div className="ai-left">
           <div>
             <div className="eyebrow"><span className="bullet" />{a.eyebrow}</div>
-            <h3>{a.h3a}<span className="serif-it">{a.h3b}</span>{a.h3c}<span className="dot" /></h3>
+            <h3 className="reveal-l">{a.h3a}<span className="serif-it">{a.h3b}</span>{a.h3c}<span className="dot" /></h3>
           </div>
           <p className="desc">{a.desc}</p>
         </div>
-        <div className="ai-stats">
+        <div className="ai-stats reveal-stagger">
           <div className="ai-stat orange">
             <div className="num">{a.stat1.num}</div>
             <div>

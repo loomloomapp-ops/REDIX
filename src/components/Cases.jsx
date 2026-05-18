@@ -45,11 +45,11 @@ export default function Cases() {
   }
 
   return (
-    <section className="section reveal" id="cases" data-screen-label="04 Cases">
+    <section className="section reveal-fade" id="cases" data-screen-label="04 Cases">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{c.eyebrow}</div>
-          <h2>
+          <h2 className="reveal-l">
             {c.h2a}<span className="serif-it">{c.h2b}</span>{c.h2c}<br />{c.h2d}<span className="dot" />
           </h2>
         </div>

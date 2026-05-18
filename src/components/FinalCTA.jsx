@@ -4,13 +4,13 @@ export default function FinalCTA({ onOpenPopup }) {
   const { t } = useI18n()
   const f = t.final
   return (
-    <section className="section reveal" id="contact" data-screen-label="10 Contact">
+    <section className="section reveal-fade" id="contact" data-screen-label="10 Contact">
       <div className="final">
         <div className="ring" />
         <div className="ring r2" />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div className="eyebrow"><span className="bullet" />{f.eyebrow}</div>
-          <h3>{f.h3a}<br />{f.h3b}<span className="serif-it">{f.h3c}</span><span className="dot" style={{ background: '#fff' }} /></h3>
+          <h3 className="reveal-l">{f.h3a}<br />{f.h3b}<span className="serif-it">{f.h3c}</span><span className="dot" style={{ background: '#fff' }} /></h3>
         </div>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p>{f.desc}</p>

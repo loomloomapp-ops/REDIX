@@ -4,7 +4,7 @@ export default function Footer() {
   const { t } = useI18n()
   const f = t.footer
   return (
-    <footer data-screen-label="11 Footer">
+    <footer className="reveal-fade" data-screen-label="11 Footer">
       <div className="brand">
         <div className="lg"><img src="/logo/radix-white.svg" alt="Radix" /></div>
         <p>{f.tagline}</p>

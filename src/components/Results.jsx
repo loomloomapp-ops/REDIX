@@ -4,17 +4,17 @@ export default function Results() {
   const { t } = useI18n()
   const r = t.results
   return (
-    <section className="section reveal" id="results" data-screen-label="06 Results">
+    <section className="section reveal-fade" id="results" data-screen-label="06 Results">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{r.eyebrow}</div>
-          <h2>
+          <h2 className="reveal-l">
             {r.h2a}<br /><span className="serif-it">{r.h2b}</span>{r.h2c}<span className="dot" />
           </h2>
         </div>
         <p className="right">{r.right}</p>
       </div>
-      <div className="results-grid">
+      <div className="results-grid reveal-stagger">
         {r.items.map((it) => (
           <div
             key={it.tag}
