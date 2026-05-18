@@ -22,7 +22,7 @@ export default function App() {
   const openPopup = useCallback(() => setPopupOpen(true), [])
   const closePopup = useCallback(() => setPopupOpen(false), [])
   const onReady = useCallback(() => setReady(true), [])
-  useReveal()
+  useReveal(ready)
 
   return (
     <I18nProvider>

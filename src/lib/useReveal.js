@@ -1,12 +1,17 @@
 import { useEffect } from 'react'
 
 /**
- * Global IntersectionObserver: any element with class `.reveal` gets `.in`
- * when it scrolls into view. Mount once at app root.
+ * Global IntersectionObserver: any element with class `.reveal*` gets `.in`
+ * when it scrolls into view.
+ *
+ * Pass `enabled=false` to defer observation (e.g. while the preloader is on
+ * screen). When `enabled` flips to true, observation begins and any element
+ * already in the viewport reveals immediately.
  */
-export function useReveal() {
+export function useReveal(enabled = true) {
   useEffect(() => {
     if (typeof window === 'undefined') return
+    if (!enabled) return
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const selector = '.reveal, .reveal-l, .reveal-r, .reveal-up, .reveal-fade, .reveal-stagger'
     if (reduce) {
@@ -30,5 +35,5 @@ export function useReveal() {
     const mo = new MutationObserver(() => scan())
     mo.observe(document.body, { childList: true, subtree: true })
     return () => { io.disconnect(); mo.disconnect() }
-  }, [])
+  }, [enabled])
 }

@@ -14,8 +14,9 @@ export default function Preloader({ onReady, minShow = 1100 }) {
       setTimeout(() => {
         if (cleared) return
         setExiting(true)
-        onReady?.()
-        setTimeout(() => setHidden(true), 950)
+        // Fire onReady mid-curtain so Hero reveal starts as the viewport opens up
+        setTimeout(() => { if (!cleared) onReady?.() }, 550)
+        setTimeout(() => { if (!cleared) setHidden(true) }, 950)
       }, wait)
     }
     if (document.readyState === 'complete') finish()
