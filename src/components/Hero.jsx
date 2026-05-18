@@ -12,7 +12,8 @@ export default function Hero({ onOpenPopup }) {
             <span className="mono" style={{ color: '#9D9485' }}>{h.tag}</span>
           </div>
           <h1 className="reveal-l">
-            {h.h1a}<span className="serif-it">{h.h1b}</span><br />
+            {h.h1a}<br />
+            <span className="serif-it">{h.h1b}</span><br />
             {h.h1c}<br />
             {h.h1d}<span className="dot" />
           </h1>

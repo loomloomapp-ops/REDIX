@@ -18,7 +18,7 @@ const dict = {
     hero: {
       badge: 'White Traffic Agency · 2025',
       tag: '[ NO_05 / RX-AGENCY ]',
-      h1a: 'Системний ',
+      h1a: 'Системний',
       h1b: 'білий',
       h1c: 'трафік для',
       h1d: 'бізнесу',
@@ -261,7 +261,7 @@ const dict = {
     hero: {
       badge: 'White Traffic Agency · 2025',
       tag: '[ NO_05 / RX-AGENCY ]',
-      h1a: 'Системный ',
+      h1a: 'Системный',
       h1b: 'белый',
       h1c: 'трафик для',
       h1d: 'бизнеса',
