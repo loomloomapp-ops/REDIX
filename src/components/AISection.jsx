@@ -4,7 +4,7 @@ export default function AISection() {
   const { t } = useI18n()
   const a = t.ai
   return (
-    <section className="section" data-screen-label="07 AI">
+    <section className="section reveal" data-screen-label="07 AI">
       <div className="ai">
         <div className="ai-left">
           <div>

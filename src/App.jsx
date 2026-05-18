@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react'
 import { I18nProvider } from './i18n.jsx'
+import { useReveal } from './lib/useReveal.js'
+import Preloader from './components/Preloader.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Marquee from './components/Marquee.jsx'
@@ -16,12 +18,16 @@ import Popup from './components/Popup.jsx'
 
 export default function App() {
   const [popupOpen, setPopupOpen] = useState(false)
+  const [ready, setReady] = useState(false)
   const openPopup = useCallback(() => setPopupOpen(true), [])
   const closePopup = useCallback(() => setPopupOpen(false), [])
+  const onReady = useCallback(() => setReady(true), [])
+  useReveal()
 
   return (
     <I18nProvider>
-      <div className="wrap">
+      <Preloader onReady={onReady} />
+      <div className="wrap" data-ready={ready}>
         <Header onOpenPopup={openPopup} />
         <Hero onOpenPopup={openPopup} />
         <Marquee />

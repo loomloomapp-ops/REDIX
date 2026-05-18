@@ -4,7 +4,7 @@ export default function Results() {
   const { t } = useI18n()
   const r = t.results
   return (
-    <section className="section" id="results" data-screen-label="06 Results">
+    <section className="section reveal" id="results" data-screen-label="06 Results">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{r.eyebrow}</div>

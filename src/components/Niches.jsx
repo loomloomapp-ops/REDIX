@@ -4,7 +4,7 @@ export default function Niches() {
   const { t } = useI18n()
   const n = t.niches
   return (
-    <section className="section" id="niches" data-screen-label="03 Niches">
+    <section className="section reveal" id="niches" data-screen-label="03 Niches">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{n.eyebrow}</div>

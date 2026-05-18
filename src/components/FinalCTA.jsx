@@ -4,7 +4,7 @@ export default function FinalCTA({ onOpenPopup }) {
   const { t } = useI18n()
   const f = t.final
   return (
-    <section className="section" id="contact" data-screen-label="10 Contact">
+    <section className="section reveal" id="contact" data-screen-label="10 Contact">
       <div className="final">
         <div className="ring" />
         <div className="ring r2" />

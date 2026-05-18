@@ -5,7 +5,7 @@ export default function AuditForm() {
   const { t } = useI18n()
   const a = t.audit
   return (
-    <section className="section" id="audit" data-screen-label="05 Audit">
+    <section className="section reveal" id="audit" data-screen-label="05 Audit">
       <div className="audit-block">
         <div>
           <div className="eyebrow"><span className="bullet" />{a.eyebrow}</div>

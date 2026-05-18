@@ -4,7 +4,7 @@ export default function Testimonials() {
   const { t } = useI18n()
   const r = t.testi
   return (
-    <section className="section" id="testi" data-screen-label="08 Testimonials">
+    <section className="section reveal" id="testi" data-screen-label="08 Testimonials">
       <div className="sec-head">
         <div>
           <div className="eyebrow"><span className="bullet" />{r.eyebrow}</div>

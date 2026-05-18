@@ -6,7 +6,7 @@ export default function FAQ() {
   const [open, setOpen] = useState(0)
   const f = t.faq
   return (
-    <section className="section" id="faq" data-screen-label="09 FAQ">
+    <section className="section reveal" id="faq" data-screen-label="09 FAQ">
       <div className="faq">
         <div>
           <div className="eyebrow"><span className="bullet" />{f.eyebrow}</div>
