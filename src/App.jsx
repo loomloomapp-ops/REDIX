@@ -1,43 +1,46 @@
 import { useCallback, useState } from 'react'
 import { I18nProvider } from './i18n.jsx'
-import Preloader from './components/Preloader.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Marquee from './components/Marquee.jsx'
-import Directions from './components/Directions.jsx'
+import Niches from './components/Niches.jsx'
 import Cases from './components/Cases.jsx'
-import LeadFormSection from './components/LeadFormSection.jsx'
-import Benefits from './components/Benefits.jsx'
-import Reviews from './components/Reviews.jsx'
+import AuditForm from './components/AuditForm.jsx'
+import Results from './components/Results.jsx'
+import AISection from './components/AISection.jsx'
+import Testimonials from './components/Testimonials.jsx'
 import FAQ from './components/FAQ.jsx'
+import FinalCTA from './components/FinalCTA.jsx'
 import Footer from './components/Footer.jsx'
 import Popup from './components/Popup.jsx'
-import CTAOverlays from './components/CTAOverlays.jsx'
 
 export default function App() {
-  const [popup, setPopup] = useState(false)
-  const [ready, setReady] = useState(false)
-  const openPopup = () => setPopup(true)
-  const closePopup = () => setPopup(false)
-  const handleReady = useCallback(() => setReady(true), [])
+  const [popupOpen, setPopupOpen] = useState(false)
+  const openPopup = useCallback(() => setPopupOpen(true), [])
+  const closePopup = useCallback(() => setPopupOpen(false), [])
 
   return (
     <I18nProvider>
-      <Preloader onReady={handleReady} />
-      <Header onOpenPopup={openPopup} />
-      <main>
-        <Hero ready={ready} />
+      <div className="wrap">
+        <Header onOpenPopup={openPopup} />
+        <Hero onOpenPopup={openPopup} />
         <Marquee />
-        <Directions />
+        <Niches />
         <Cases />
-        <LeadFormSection />
-        <Benefits />
-        <Reviews />
+        <AuditForm />
+        <Results />
+        <AISection />
+        <Testimonials />
         <FAQ />
-      </main>
-      <Footer />
-      <CTAOverlays onOpenPopup={openPopup} popupOpen={popup} />
-      <Popup open={popup} onClose={closePopup} />
+        <FinalCTA onOpenPopup={openPopup} />
+        <Footer />
+        <div className="botbar">
+          <span>© 2025 Radix Agency · All rights reserved</span>
+          <span>[ White Traffic — for those who count money ]</span>
+          <span>UA / RU</span>
+        </div>
+      </div>
+      <Popup open={popupOpen} onClose={closePopup} />
     </I18nProvider>
   )
 }

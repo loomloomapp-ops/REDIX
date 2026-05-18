@@ -5,3 +5,4 @@ dist
 .env.local
 .vite
 *.log
+Radix Landing.standalone.html
