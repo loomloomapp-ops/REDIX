@@ -3,12 +3,13 @@ import { useI18n } from '../i18n.jsx'
 
 function Video({ id, label }) {
   const [active, setActive] = useState(false)
-  const thumb = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+  const [thumbSrc, setThumbSrc] = useState(`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`)
+  const handleError = () => setThumbSrc(`https://i.ytimg.com/vi/${id}/sddefault.jpg`)
   if (active) {
     return (
       <div className="vcard">
         <iframe
-          src={`https://www.youtube.com/embed/${id}?autoplay=1&rel=0`}
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
           title={label}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -18,7 +19,7 @@ function Video({ id, label }) {
   }
   return (
     <button type="button" className="vcard" onClick={() => setActive(true)} aria-label={label}>
-      <img src={thumb} alt={label} loading="lazy" />
+      <img src={thumbSrc} alt={label} loading="lazy" onError={handleError} />
       <span className="vcard-shade" />
       <span className="vcard-play" aria-hidden="true" />
       <span className="vcard-label">{label}</span>
