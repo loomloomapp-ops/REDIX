@@ -56,8 +56,10 @@ export default function FloatingWidgets({ onOpenPopup }) {
     <>
       {/* Desktop right cluster */}
       <div
-        className={`fw-right ${scrolled ? 'fw-show' : ''}`}
+        className={`fw-right ${scrolled ? 'fw-show' : ''} ${open ? 'fw-open' : ''}`}
         aria-label="Швидкий контакт"
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
       >
         <div className={`fw-actions ${open ? 'fw-actions-open' : ''}`}>
           <a
@@ -92,8 +94,6 @@ export default function FloatingWidgets({ onOpenPopup }) {
           className="fw-main"
           aria-expanded={open}
           aria-label="Швидкий контакт"
-          onMouseEnter={() => setOpen(true)}
-          onMouseLeave={() => setOpen(false)}
           onClick={() => setOpen((v) => !v)}
         >
           <span className="fw-ping" aria-hidden="true" />

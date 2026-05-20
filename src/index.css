@@ -594,7 +594,7 @@ footer .col a,.final .links{transition:color .2s}
 .fw-ping{position:absolute;inset:0;border-radius:50%;background:var(--accent);opacity:.25;animation:fwPing 2s ease-in-out infinite}
 @keyframes fwPing{0%{transform:scale(1);opacity:.35}70%,100%{transform:scale(1.6);opacity:0}}
 
-.fw-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end;pointer-events:none}
+.fw-actions{display:flex;flex-direction:column;gap:8px;align-items:flex-end}
 .fw-actions .fw-mini{opacity:0;transform:translateY(8px) scale(.85);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
 .fw-actions-open .fw-mini{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 .fw-actions-open .fw-mini:nth-child(1){transition-delay:.04s}
