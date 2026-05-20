@@ -22,6 +22,7 @@ function loadYouTubeAPI() {
 function Video({ id, label }) {
   const [active, setActive] = useState(false)
   const [playing, setPlaying] = useState(false)
+  const [paused, setPaused] = useState(false)
   const [thumbSrc, setThumbSrc] = useState(`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`)
   const hostRef = useRef(null)
   const playerRef = useRef(null)
@@ -50,7 +51,12 @@ function Video({ id, label }) {
             try { ev.target.playVideo() } catch {}
           },
           onStateChange: (ev) => {
-            if (ev.data === YT.PlayerState.PLAYING) setPlaying(true)
+            if (ev.data === YT.PlayerState.PLAYING) {
+              setPlaying(true)
+              setPaused(false)
+            } else if (ev.data === YT.PlayerState.PAUSED || ev.data === YT.PlayerState.ENDED) {
+              setPaused(true)
+            }
           },
         },
       })
@@ -64,9 +70,34 @@ function Video({ id, label }) {
     }
   }, [active, id])
 
+  const resume = () => {
+    if (playerRef.current && playerRef.current.playVideo) {
+      try { playerRef.current.playVideo() } catch {}
+    }
+    setPaused(false)
+  }
+  const pauseToggle = (e) => {
+    e.stopPropagation()
+    if (playerRef.current && playerRef.current.pauseVideo) {
+      try { playerRef.current.pauseVideo() } catch {}
+    }
+    setPaused(true)
+  }
+
   return (
-    <div className={`vcard${active ? ' vcard-active' : ''}${playing ? ' vcard-playing' : ''}`}>
+    <div className={`vcard${active ? ' vcard-active' : ''}${playing ? ' vcard-playing' : ''}${paused ? ' vcard-paused' : ''}`}>
       <div className="vcard-host" ref={hostRef} />
+      {playing && !paused && (
+        <button type="button" className="vcard-pause-zone" aria-label="Пауза" onClick={pauseToggle} />
+      )}
+      {paused && (
+        <button type="button" className="vcard-resume" onClick={resume} aria-label="Продовжити">
+          <img src={thumbSrc} alt={label} loading="lazy" />
+          <span className="vcard-shade" />
+          <span className="vcard-play" aria-hidden="true" />
+          <span className="vcard-label">{label}</span>
+        </button>
+      )}
       {!playing && (
         <button
           type="button"
