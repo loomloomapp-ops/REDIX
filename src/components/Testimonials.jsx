@@ -9,12 +9,11 @@ function Video({ id, label }) {
     return (
       <div className="vcard vcard-playing">
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1`}
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=0&iv_load_policy=3&disablekb=1`}
           title={label}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
-        <span className="vcard-titlemask" aria-hidden="true" />
       </div>
     )
   }
