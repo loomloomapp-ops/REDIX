@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useI18n } from '../i18n.jsx'
 import { sendLeadToTelegram } from '../lib/telegram.js'
 
-const initial = { name: '', contact: '', niche: '', budget: '', comment: '', policy: true }
+const baseInitial = { name: '', contact: '', niche: '', budget: '', comment: '', policy: true }
 
 function validate(values, t) {
   const e = {}
@@ -18,9 +18,9 @@ function validate(values, t) {
   return e
 }
 
-export default function LeadForm({ source = 'inline' }) {
+export default function LeadForm({ source = 'inline', prefillNiche }) {
   const { t, lang } = useI18n()
-  const [values, setValues] = useState(initial)
+  const [values, setValues] = useState({ ...baseInitial, niche: prefillNiche || '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
 
@@ -62,7 +62,7 @@ export default function LeadForm({ source = 'inline' }) {
         <button
           type="button"
           className="btn light"
-          onClick={() => { setValues(initial); setStatus('idle') }}
+          onClick={() => { setValues({ ...baseInitial, niche: prefillNiche || '' }); setStatus('idle') }}
         >
           {t.form.again} <span className="arr" />
         </button>

@@ -3,8 +3,9 @@ import { createPortal } from 'react-dom'
 import { useI18n } from '../i18n.jsx'
 import LeadForm from './LeadForm.jsx'
 
-export default function Popup({ open, onClose }) {
+export default function Popup({ open, onClose, context }) {
   const { t } = useI18n()
+  const niche = context?.niche
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -20,6 +21,9 @@ export default function Popup({ open, onClose }) {
 
   if (!open) return null
 
+  const title = niche ? t.popup.titleNiche : t.popup.title
+  const sub = niche ? `${t.popup.subNiche} «${niche}».` : t.popup.sub
+
   return createPortal(
     <div className="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" onClick={onClose}>
       <div className="popup-card" onClick={(e) => e.stopPropagation()}>
@@ -29,12 +33,12 @@ export default function Popup({ open, onClose }) {
           </svg>
         </button>
         <div className="eyebrow" style={{ color: '#EFEAE2' }}>
-          <span className="bullet" />Radix · Audit
+          <span className="bullet" />Radix · {niche ? niche : 'Audit'}
         </div>
-        <h3 id="popup-title">{t.popup.title}<span className="dot" /></h3>
-        <p className="sub">{t.popup.sub}</p>
+        <h3 id="popup-title">{title}<span className="dot" /></h3>
+        <p className="sub">{sub}</p>
         <div className="form-wrap">
-          <LeadForm source="popup" />
+          <LeadForm source={niche ? `niche:${niche}` : 'popup'} prefillNiche={niche} />
         </div>
       </div>
     </div>,

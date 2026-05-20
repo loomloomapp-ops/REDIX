@@ -10,7 +10,7 @@ export default function AuditForm() {
         <div>
           <div className="eyebrow"><span className="bullet" />{a.eyebrow}</div>
           <h3 className="reveal-l">
-            {a.h3a}<br /><span className="serif-it">{a.h3b}</span>{a.h3c}<span className="dot" />
+            {a.h3a}<br />{a.h3b}{a.h3c}<span className="dot" />
           </h3>
           <p className="desc">
             {a.desc1}<u>{a.descU}</u>{a.desc2}

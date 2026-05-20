@@ -1,4 +1,5 @@
 import { useI18n } from '../i18n.jsx'
+import CountUp from '../lib/CountUp.jsx'
 
 export default function Hero({ onOpenPopup }) {
   const { t } = useI18n()
@@ -13,7 +14,7 @@ export default function Hero({ onOpenPopup }) {
           </div>
           <h1 className="reveal-l">
             {h.h1a}<br />
-            <span className="serif-it">{h.h1b}</span><br />
+            {h.h1b}<br />
             {h.h1c}<br />
             {h.h1d}<span className="dot" />
           </h1>
@@ -52,7 +53,7 @@ export default function Hero({ onOpenPopup }) {
           <div className="hero-stat">
             {h.stats.map((s, i) => (
               <div className="stat" key={i}>
-                <div className="num">{s.num}</div>
+                <div className="num"><CountUp value={s.num} /></div>
                 <div className="lab">{s.lab}</div>
               </div>
             ))}

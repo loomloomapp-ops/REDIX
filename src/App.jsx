@@ -15,12 +15,17 @@ import FAQ from './components/FAQ.jsx'
 import FinalCTA from './components/FinalCTA.jsx'
 import Footer from './components/Footer.jsx'
 import Popup from './components/Popup.jsx'
+import FloatingWidgets from './components/FloatingWidgets.jsx'
 
 export default function App() {
   const [popupOpen, setPopupOpen] = useState(false)
+  const [popupContext, setPopupContext] = useState(null)
   const [ready, setReady] = useState(false)
-  const openPopup = useCallback(() => setPopupOpen(true), [])
-  const closePopup = useCallback(() => setPopupOpen(false), [])
+  const openPopup = useCallback((ctx) => {
+    setPopupContext(ctx && typeof ctx === 'object' && !ctx.nativeEvent ? ctx : null)
+    setPopupOpen(true)
+  }, [])
+  const closePopup = useCallback(() => { setPopupOpen(false); setPopupContext(null) }, [])
   const onReady = useCallback(() => setReady(true), [])
   useReveal(ready)
 
@@ -31,7 +36,7 @@ export default function App() {
         <Header onOpenPopup={openPopup} />
         <Hero onOpenPopup={openPopup} />
         <Marquee />
-        <Niches />
+        <Niches onOpenPopup={openPopup} />
         <Cases />
         <AuditForm />
         <Results />
@@ -46,7 +51,8 @@ export default function App() {
           <span>UA / RU</span>
         </div>
       </div>
-      <Popup open={popupOpen} onClose={closePopup} />
+      <FloatingWidgets onOpenPopup={openPopup} />
+      <Popup open={popupOpen} onClose={closePopup} context={popupContext} />
     </I18nProvider>
   )
 }

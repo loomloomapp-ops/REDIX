@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="col">
         <h6>{f.col3Title}</h6>
         {f.col3.map(([label, href]) => (
-          <a key={label} href={href}>{label}</a>
+          <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>{label}</a>
         ))}
       </div>
     </footer>

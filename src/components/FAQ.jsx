@@ -10,7 +10,7 @@ export default function FAQ() {
       <div className="faq">
         <div>
           <div className="eyebrow"><span className="bullet" />{f.eyebrow}</div>
-          <h3 className="reveal-l">{f.h3a}<span className="serif-it">{f.h3b}</span><span className="dot" /></h3>
+          <h3 className="reveal-l">{f.h3a}{f.h3b}<span className="dot" /></h3>
           <p className="desc">{f.desc}</p>
         </div>
         <div className="faq-list reveal-stagger">

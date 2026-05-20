@@ -9,7 +9,7 @@ export default function Results() {
         <div>
           <div className="eyebrow"><span className="bullet" />{r.eyebrow}</div>
           <h2 className="reveal-l">
-            {r.h2a}<br /><span className="serif-it">{r.h2b}</span>{r.h2c}<span className="dot" />
+            {r.h2a}<br />{r.h2b}{r.h2c}<span className="dot" />
           </h2>
         </div>
         <p className="right">{r.right}</p>
@@ -23,7 +23,7 @@ export default function Results() {
             <div>
               <span className="idx">— {it.tag}</span>
               <h4>
-                {it.titleA}<span className="serif-it">{it.titleB}</span>{it.titleC || ''}
+                {it.titleA}{it.titleB}{it.titleC || ''}
               </h4>
             </div>
             <p>{it.text}</p>

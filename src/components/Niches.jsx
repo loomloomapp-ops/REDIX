@@ -1,6 +1,6 @@
 import { useI18n } from '../i18n.jsx'
 
-export default function Niches() {
+export default function Niches({ onOpenPopup }) {
   const { t } = useI18n()
   const n = t.niches
   return (
@@ -9,7 +9,7 @@ export default function Niches() {
         <div>
           <div className="eyebrow"><span className="bullet" />{n.eyebrow}</div>
           <h2 className="reveal-l">
-            {n.h2a}<br />{n.h2b}<span className="serif-it">{n.h2c}</span><span className="dot" />
+            {n.h2a}<br />{n.h2b}{n.h2c}<span className="dot" />
           </h2>
         </div>
         <p className="right">{n.right}</p>
@@ -19,7 +19,7 @@ export default function Niches() {
         <div className="niches-left">
           <div className="top">
             <h3>
-              {n.leftTitle1}<span style={{ color: 'var(--accent)' }}>+</span>{n.leftTitle2}<span className="serif-it">{n.leftTitle3}</span>
+              {n.leftTitle1}<span style={{ color: 'var(--accent)' }}>+</span>{n.leftTitle2}{n.leftTitle3}
             </h3>
             <p>{n.leftText}</p>
           </div>
@@ -27,11 +27,17 @@ export default function Niches() {
         </div>
         <div className="niches-right reveal-stagger">
           {n.rows.map(([num, name, meta]) => (
-            <div className="niche-row" key={num}>
+            <button
+              type="button"
+              className="niche-row"
+              key={num}
+              onClick={() => onOpenPopup?.({ niche: name })}
+              aria-label={`${name} — ${meta}`}
+            >
               <span className="n">— {num}</span>
               <span className="name">{name}</span>
               <span className="meta">{meta}</span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
