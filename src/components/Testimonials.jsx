@@ -7,13 +7,14 @@ function Video({ id, label }) {
   const handleError = () => setThumbSrc(`https://i.ytimg.com/vi/${id}/sddefault.jpg`)
   if (active) {
     return (
-      <div className="vcard">
+      <div className="vcard vcard-playing">
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+          src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1`}
           title={label}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
+        <span className="vcard-titlemask" aria-hidden="true" />
       </div>
     )
   }
