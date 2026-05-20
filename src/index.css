@@ -565,9 +565,16 @@ footer .col a,.final .links{transition:color .2s}
 
 /* ===== Video testimonials ===== */
 .testi-videos{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.vcard{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--ink);border:none;padding:0;cursor:pointer;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.vcard{position:relative;display:block;width:100%;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--ink);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
+.vcard-trigger{position:absolute;inset:0;width:100%;height:100%;border:none;background:transparent;padding:0;cursor:pointer;z-index:2}
 .vcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .vcard iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.vcard-host{position:absolute;inset:0;opacity:0;transition:opacity .25s ease}
+.vcard-host iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.vcard-playing .vcard-host{opacity:1}
+.vcard-playing img,.vcard-playing .vcard-shade,.vcard-playing .vcard-play,.vcard-playing .vcard-loader,.vcard-playing .vcard-label{display:none}
+.vcard-loader{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;border:2px solid rgba(255,255,255,0.25);border-top-color:#fff;animation:vcardSpin .9s linear infinite;z-index:2}
+@keyframes vcardSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 .vcard:hover{transform:translateY(-3px);box-shadow:0 18px 36px -18px rgba(17,17,17,0.5)}
 .vcard-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,0.55) 100%);pointer-events:none}
 .vcard-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(255,255,255,0.12);transition:transform .25s ease}
