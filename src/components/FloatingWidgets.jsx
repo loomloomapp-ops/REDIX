@@ -98,6 +98,7 @@ export default function FloatingWidgets({ onOpenPopup }) {
         >
           <span className="fw-ping" aria-hidden="true" />
           <ContactIcon />
+          <span className="fw-online" aria-hidden="true" />
         </button>
       </div>
 

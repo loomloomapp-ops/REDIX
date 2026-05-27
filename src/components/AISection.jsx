@@ -15,14 +15,14 @@ export default function AISection() {
           <p className="desc">{a.desc}</p>
         </div>
         <div className="ai-stats reveal-stagger">
-          <div className="ai-stat orange">
+          <div className="ai-stat green">
             <div className="num"><CountUp value={a.stat1.num} /></div>
             <div>
               <div className="sub">{a.stat1.sub}</div>
               <div className="lab">{a.stat1.lab}</div>
             </div>
           </div>
-          <div className="ai-stat">
+          <div className="ai-stat alt">
             <div className="num"><CountUp value={a.stat2.num} /></div>
             <div>
               <div className="sub">{a.stat2.sub}</div>

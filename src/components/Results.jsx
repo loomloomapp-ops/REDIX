@@ -18,7 +18,7 @@ export default function Results() {
         {r.items.map((it) => (
           <div
             key={it.tag}
-            className={`result${it.dark ? ' dark' : ''}${it.orange ? ' orange' : ''}${it.span6 ? ' span6' : ''}`}
+            className={`result${it.dark ? ' dark' : ''}${it.orange ? ' orange' : ''}${it.green ? ' green' : ''}${it.span6 ? ' span6' : ''}`}
           >
             <div>
               <span className="idx">— {it.tag}</span>

@@ -52,7 +52,7 @@ export default function Hero({ onOpenPopup }) {
           </div>
           <div className="hero-stat">
             {h.stats.map((s, i) => (
-              <div className="stat" key={i}>
+              <div className={`stat${s.accent ? ' acc' : ''}`} key={i}>
                 <div className="num"><CountUp value={s.num} /></div>
                 <div className="lab">{s.lab}</div>
               </div>
