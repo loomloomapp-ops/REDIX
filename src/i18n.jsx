@@ -208,7 +208,7 @@ const dict = {
       geo: 'Гео:',
       preview: 'Креативи, що працюють. Стратегія, що масштабує.',
       previewTag: '[ CREATIVE_LAB · INTRO ]',
-      live: 'Live · 2025',
+      live: 'Live · 2020',
       meta: 'Інтро-відео команди',
       stats: [
         { num: '7.4×', lab: 'Середній ROAS / Q1 2025', accent: true },
@@ -407,7 +407,7 @@ const dict = {
       geo: 'Гео:',
       preview: 'Креативы, что работают. Стратегия, что масштабирует.',
       previewTag: '[ CREATIVE_LAB · INTRO ]',
-      live: 'Live · 2025',
+      live: 'Live · 2020',
       meta: 'Интро-видео команды',
       stats: [
         { num: '7.4×', lab: 'Средний ROAS / Q1 2025', accent: true },
