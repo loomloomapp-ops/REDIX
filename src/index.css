@@ -76,7 +76,7 @@ h1,h2,h3,h4,h5{margin:0;font-family:"Unbounded",sans-serif;font-weight:700;lette
 .hero-img .tag{display:flex;justify-content:space-between;align-items:center;z-index:2;position:relative}
 .hero-img .tag .mono{color:rgba(255,255,255,0.85)}
 .hero-img .tag .rec{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,0.28);padding:6px 10px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:0.14em;color:#fff;text-transform:uppercase}
-.hero-img .tag .rec .d{width:7px;height:7px;border-radius:50%;background:#fff;animation:rec 1.4s ease-in-out infinite}
+.hero-img .tag .rec .d{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(17,96,64,0.28);animation:rec 1.4s ease-in-out infinite}
 @keyframes rec{0%,100%{opacity:0.35}50%{opacity:1}}
 .hero-img h3{font-family:"Unbounded";font-size:24px;letter-spacing:-0.02em;line-height:1.15;max-width:18ch;color:#fff;font-weight:700;z-index:2;position:relative}
 .video-frame{
@@ -128,7 +128,7 @@ h1,h2,h3,h4,h5{margin:0;font-family:"Unbounded",sans-serif;font-weight:700;lette
 .niches-left .top h3 .serif-it{color:var(--muted)}
 .niches-left .top p{margin-top:18px;color:var(--ink-2);font-size:14.5px;max-width:32ch;line-height:1.6}
 .niches-left .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-soft);padding:10px 14px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--ink);letter-spacing:0.08em;text-transform:uppercase;align-self:flex-start}
-.niches-left .pill .b{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.niches-left .pill .b{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(17,96,64,0.16);animation:rec 1.6s ease-in-out infinite}
 .niches-right{background:var(--paper);border-radius:var(--r);padding:8px 28px}
 .niche-row{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:16px;padding:20px 4px;border-top:1px solid var(--line-soft);transition:padding-left .2s,background .2s}
 .niche-row:first-child{border-top:none}
