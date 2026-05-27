@@ -199,7 +199,7 @@ const dict = {
       instagram: 'https://www.instagram.com/radix.marketing',
     },
     hero: {
-      badge: 'White Traffic Agency · 2025',
+      badge: 'White Traffic Agency · 2020',
       tag: '[ NO_05 / RX-AGENCY ]',
       h1a: 'Системний',
       h1b: 'білий',
@@ -222,7 +222,7 @@ const dict = {
       h2c: 'працюємо',
       right: 'Маємо досвід у 12+ нішах. Для кожної — окрема команда стратегів, медіабаєрів і креаторів. Знаємо тригери аудиторії, регуляторику та сезонність ринку.',
       leftTitle1: '200',
-      leftTitle2: '+ бізнесів, з якими ',
+      leftTitle2: ' бізнесів, з якими ',
       leftTitle3: 'працювали',
       leftText: 'Від локальних доставок у Києві до off-plan нерухомості в Дубаї. Білий трафік без cloak — масштаб у довгу, без блокувань.',
       pill: 'Активних проєктів зараз · 47',
@@ -350,6 +350,7 @@ const dict = {
       email: 'hi@radix.agency',
       links: [
         ['Telegram:', '@radixagency'],
+        ['Instagram:', '@radix.marketing', 'https://www.instagram.com/radix.marketing?igsh=djB6NGhjNXN6cWZy&utm_source=qr'],
         ['Офіси:', 'Київ · Варшава · Дубай'],
       ],
     },
@@ -358,7 +359,7 @@ const dict = {
       col1Title: 'Напрямки',
       col1: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'Google Maps', 'YouTube Ads', 'AI-аналітика'],
       col2Title: 'Агенція',
-      col2: ['Кейси', 'Переваги', 'Відгуки', 'FAQ', 'Команда'],
+      col2: ['Кейси', 'Переваги', 'Відгуки', 'FAQ', 'Контакти'],
       col3Title: 'Контакти',
       col3: [
         ['hi@radix.agency', 'mailto:hi@radix.agency'],
@@ -397,7 +398,7 @@ const dict = {
       instagram: 'https://www.instagram.com/radix.marketing',
     },
     hero: {
-      badge: 'White Traffic Agency · 2025',
+      badge: 'White Traffic Agency · 2020',
       tag: '[ NO_05 / RX-AGENCY ]',
       h1a: 'Системный',
       h1b: 'белый',
@@ -420,7 +421,7 @@ const dict = {
       h2c: 'работаем',
       right: 'Опыт в 12+ нишах. Для каждой — отдельная команда стратегов, медиабайеров и креаторов.',
       leftTitle1: '200',
-      leftTitle2: '+ бизнесов, с которыми ',
+      leftTitle2: ' бизнесов, с которыми ',
       leftTitle3: 'работали',
       leftText: 'От локальных доставок в Киеве до off-plan недвижимости в Дубае. Белый трафик без cloak.',
       pill: 'Активных проектов · 47',
@@ -548,6 +549,7 @@ const dict = {
       email: 'hi@radix.agency',
       links: [
         ['Telegram:', '@radixagency'],
+        ['Instagram:', '@radix.marketing', 'https://www.instagram.com/radix.marketing?igsh=djB6NGhjNXN6cWZy&utm_source=qr'],
         ['Офисы:', 'Киев · Варшава · Дубай'],
       ],
     },
@@ -556,7 +558,7 @@ const dict = {
       col1Title: 'Направления',
       col1: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'Google Maps', 'YouTube Ads', 'AI-аналитика'],
       col2Title: 'Агенция',
-      col2: ['Кейсы', 'Преимущества', 'Отзывы', 'FAQ', 'Команда'],
+      col2: ['Кейсы', 'Преимущества', 'Отзывы', 'FAQ', 'Контакты'],
       col3Title: 'Контакты',
       col3: [
         ['hi@radix.agency', 'mailto:hi@radix.agency'],

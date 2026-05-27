@@ -21,8 +21,12 @@ export default function FinalCTA({ onOpenPopup }) {
             <a className="btn light" href={`mailto:${f.email}`}>{f.email}</a>
           </div>
           <div className="links">
-            {f.links.map(([k, v]) => (
-              <div key={k}>● {k} <b>{v}</b></div>
+            {f.links.map(([k, v, href]) => (
+              <div key={k}>● {k}{' '}
+                {href
+                  ? <b><a href={href} target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>{v}</a></b>
+                  : <b>{v}</b>}
+              </div>
             ))}
           </div>
         </div>
