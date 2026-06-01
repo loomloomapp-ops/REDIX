@@ -351,7 +351,6 @@ const dict = {
       links: [
         ['Telegram:', '@radixagency'],
         ['Instagram:', '@radix.marketing', 'https://www.instagram.com/radix.marketing?igsh=djB6NGhjNXN6cWZy&utm_source=qr'],
-        ['Офіси:', 'Київ · Варшава · Дубай'],
       ],
     },
     footer: {
@@ -550,7 +549,6 @@ const dict = {
       links: [
         ['Telegram:', '@radixagency'],
         ['Instagram:', '@radix.marketing', 'https://www.instagram.com/radix.marketing?igsh=djB6NGhjNXN6cWZy&utm_source=qr'],
-        ['Офисы:', 'Киев · Варшава · Дубай'],
       ],
     },
     footer: {

@@ -14,7 +14,6 @@ export default function Hero({ onOpenPopup }) {
           </div>
           <h1 className="reveal-l">
             {h.h1a}<br />
-            {h.h1b}<br />
             {h.h1c}<br />
             {h.h1d}<span className="dot" />
           </h1>
